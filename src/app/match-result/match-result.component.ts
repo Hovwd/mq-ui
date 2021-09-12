@@ -30,7 +30,6 @@ export class MatchResultComponent {
 
         }},
       error => {
-        alert("Error")
       })
   }
 

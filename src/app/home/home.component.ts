@@ -32,7 +32,6 @@ export class HomeComponent implements OnInit {
           this.dataSourceStatements.data = this.employees
         }},
       error => {
-        alert("Error")
       })
   }
 
@@ -53,7 +52,6 @@ export class HomeComponent implements OnInit {
           }
         },
         error => {
-          alert("Error")
         }
       );
     }
