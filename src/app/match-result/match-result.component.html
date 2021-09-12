@@ -1,0 +1,31 @@
+
+<!--
+<h1>{{combinations[0].pairList[0].employee1}}</h1>
+-->
+<section>
+<mat-card>
+<mat-list>
+  <ng-container *ngFor="let combination of combinations">
+    <mat-list style="margin-left:30px;">
+      <div *ngFor="let pair of combination.pairList">
+        <mat-list-item>
+          <b>{{ pair.employee1 }} </b>  &nbsp; with &nbsp; <b> {{ pair.employee2 }} </b> = {{pair.matchPercentage}}
+        </mat-list-item>
+      </div>
+    </mat-list>
+    <mat-card class="average">Average score = {{combination.averageMatchPercentage}}</mat-card>
+  </ng-container>
+</mat-list>
+</mat-card>
+  <mat-card>
+    <mat-list style="margin-left:30px;">
+      <mat-card class="result"><b>The highest average match score is for the 1st set:  {{result.averageMatchPercentage}}</b></mat-card>
+      <div *ngFor="let pair of result.pairList">
+        <mat-list-item>
+          <b>{{ pair.employee1 }} </b>  &nbsp;  will be matched with Nicholas &nbsp; <b> {{ pair.employee2 }} </b> = {{pair.matchPercentage}}
+        </mat-list-item>
+      </div>
+    </mat-list>
+  </mat-card>
+</section>
+

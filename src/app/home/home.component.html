@@ -1,0 +1,45 @@
+<mat-card>
+  <section>
+    <div class="upload-btn-wrapper">
+      <button class="allbtn allbtnrt mat-raised-button mat-button-base mat-primary upload" mat-button color="primary" >
+        Import File
+      </button>
+      <input class="form-control"  type="file" onclick="this.value = null"  (change)="uploadFile($event)"/>
+    </div>
+  </section>
+
+  <table mat-table [dataSource]="dataSourceStatements" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="mail">
+      <th mat-header-cell *matHeaderCellDef>Email</th>
+      <td mat-cell *matCellDef="let element"> {{element.mail}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="age">
+      <th mat-header-cell *matHeaderCellDef>Age</th>
+      <td mat-cell *matCellDef="let element"> {{element.age}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="division">
+      <th mat-header-cell *matHeaderCellDef>Division</th>
+      <td mat-cell *matCellDef="let element"> {{element.division}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="utcOffset">
+      <th mat-header-cell *matHeaderCellDef>Timezone</th>
+      <td mat-cell *matCellDef="let element"> {{element.utcOffset}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-divider>
+  </mat-divider>
+  <a mat-button routerLink="/match" routerLinkActive="active">Match Employees</a>
+</mat-card>
